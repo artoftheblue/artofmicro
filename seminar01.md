@@ -51,4 +51,6 @@ $$\text{DWL}'=\frac{1}{2}\cdot 4\cdot 12 = 24$$
 
 Now let the monopolist be subject to a proportional income tax. How will the introduction of the tax affect the output of the monopolist, the welfare of consumers and society?
 
-$$\pi$$
+$$\pi=(24-y)y-y^2-12$$
+
+$$\pi'=(1-t)((24-y)y-y^2-12)$$
