@@ -138,5 +138,5 @@ Find the DWL of society and illustrate graphically.
 Now let the monopolist be able to set a different price for his product for two regions, and resale between regions is impossible. Find an equilibrium and illustrate the solution graphically.
 
 ### Subproblem 4 
-
+ 
 How will the welfare of consumers, the profit of the monopoly and the total welfare of society change with the possibility of discrimination compared with the equilibrium in the market for a monopoly product in the absence of discrimination? Comment on the result.
