@@ -7,7 +7,7 @@ The cost function of a non-discriminating monopolist is $c(y) = y^2 + 12$, and t
 
 Find the monopolist's marginal revenue function, equilibrium price and output, and profit. Illustrate graphically the obtained results.
 
-$$\pi=p^{(y)}y-c(y)$$
+$$\pi=p(y)y-c(y)$$
 
 Revenue function:
 
@@ -105,9 +105,33 @@ $$y_1+y_2=\begin{cases}
     0,p>13
 \end{cases}$$
 
+$$\pi=\underbrace{p(y)y}_{p\cdot y \, - \,\text{perfect competition}}-c(y)\to\max_{y\geq0}$$
+
+$$p^d=\begin{cases}
+    12 - \frac{1}{3}y, \quad 6\leq y\leq 36\\
+    13-\frac{1}{2} y, \quad 0\leq y \leq 6
+\end{cases}$$
+
+$$\begin{align*}6\leq y\leq 36\colon\, &\pi=12y-\frac{1}{3}y^2-\frac{5}{3}y^2\to\max_y\\&y^*=\frac{12}{4}=3\end{align*}$$
+
+$y^*$ is out of bounds.
+
+$$\begin{align*}0\leq y\leq 6\colon\, &\pi_2=13y-\frac{1}{2}y^2-\frac{5}{3}y^2\to\max_y\\&y^*=\frac{13\cdot6}{13\cdot 2}=3\end{align*}$$
+
+$y^*$ is within bounds.
+
+$$\pi_2=13y-\frac{1}{2}y^2-\frac{5}{3}y^2=13\cdot3-\frac{13}{26}\cdot 3^2=6.5\cdot3=19.5$$
+
+$$\text{CS}=(1.5)^2$$
+
+$$\text{PS}=\pi+0=19.5$$
+
+$$\text{MC}=\frac{10}{3}y$$
+
 ### Subproblem 2
 
 Find the DWL of society and illustrate graphically.
+
 
 ### Subproblem 3 
 
