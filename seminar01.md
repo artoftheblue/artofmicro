@@ -60,3 +60,59 @@ $$\text{MR}^{new}=((1-t)((24-y)y))'=\text{MR}(1-t)=(1-t)(24-2y)$$
 $$\text{MC}=(1-t)2y,\ \text{MR}^{new}=\text{MC}\implies y=6, p=18$$
 
 $$\pi=60(1-t)$$
+
+---
+
+Check whether everything is correct (we flunked up somewhere so it's not actually correct):
+
+$$\text{CS}=\frac{(24-18)\cdot6}{2}=18$$
+
+$$\text{PS}=\pi^*=\text{FC}(1-t)=60+12(1-t)$$
+
+$$\text{Taxes}=60t$$
+
+$$\text{SW}=\text{CS}+\text{PS}+\text{Taxes}$$
+
+| --- | --- | --- | --- |
+| CS=18 | PS=72  | | DWL=6 |  
+| CS'=8 | PS'=32 | Taxes=32 | DWL' = 24|
+
+$$\text{DWL}=96-90-48t=6-48t$$
+
+
+## Problem 2
+
+   A monopolist uses technology with a cost function $c(y) = 5/3y^2$ and can sell his product in two regions, price discrimination between which is prohibited. The inverse function of demand for monopoly goods in the first region is $p_1 =10-y_1$, and in the second region $p_2 =13-0.5y_2$.
+
+### Subproblem 1
+
+Find the equilibrium and illustrate it graphically. Will the monopolist sell its product in both regions?
+
+$$y_1=\begin{cases}
+    10-p_1, p_1\leq10\\
+    0, p>10
+\end{cases}$$
+
+$$y_2=\begin{cases}
+    26-2p_2,p_1\leq13\\
+    0, p>13
+\end{cases}
+$$
+
+$$y_1+y_2=\begin{cases}
+    36-3p,p\leq10\\
+    26-2p,p\in(10,13)\\
+    0,p>13
+\end{cases}$$
+
+### Subproblem 2
+
+Find the DWL of society and illustrate graphically.
+
+### Subproblem 3 
+
+Now let the monopolist be able to set a different price for his product for two regions, and resale between regions is impossible. Find an equilibrium and illustrate the solution graphically.
+
+### Subproblem 4 
+
+How will the welfare of consumers, the profit of the monopoly and the total welfare of society change with the possibility of discrimination compared with the equilibrium in the market for a monopoly product in the absence of discrimination? Comment on the result.
