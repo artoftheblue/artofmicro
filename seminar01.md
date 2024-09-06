@@ -1,7 +1,7 @@
 # Seminar 1, 06.09.2024
 
 ## Problem 1
-The cost function of a non-discriminating monopolist is $c(y) = y^2 + 12$, and the inverse demand function is $p(y) = 24 - y$.
+The cost function of a non-discriminating monopolist is $c(y) = y^2 + 12$, and the inverse demand function is $p(y) = 24 - y$. 
 
 ### Subproblem 1
 
