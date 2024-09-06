@@ -60,7 +60,7 @@ $$\text{MR}^{new}=((1-t)((24-y)y))'=\text{MR}(1-t)=(1-t)(24-2y)$$
 $$\text{MC}=(1-t)2y,\ \text{MR}^{new}=\text{MC}\implies y=6, p=18$$
 
 $$\pi=60(1-t)$$
-
+ 
 ---
 
 Check whether everything is correct (we flunked up somewhere so it's not actually correct):
