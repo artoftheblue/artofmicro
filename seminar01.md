@@ -1,3 +1,9 @@
+---
+abbreviations:
+  MC: Marginal Costs
+  MR: Marginal Revenue
+---
+
 # Seminar 1, 06.09.2024
 
 ## Problem 1
@@ -140,3 +146,5 @@ Now let the monopolist be able to set a different price for his product for two 
 ### Subproblem 4 
  
 How will the welfare of consumers, the profit of the monopoly and the total welfare of society change with the possibility of discrimination compared with the equilibrium in the market for a monopoly product in the absence of discrimination? Comment on the result.
+
+Find MR and MC.

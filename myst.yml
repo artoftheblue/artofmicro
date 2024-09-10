@@ -8,6 +8,8 @@ project:
   # authors: []
   github: https://github.com/artoftheblue/artofmicro
   # To autogenerate a Table of Contents, run "myst init --write-toc"
+  math:
+    '\ov': '\overline'
 site:
   template: book-theme
   # options:
