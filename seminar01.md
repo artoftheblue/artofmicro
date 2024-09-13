@@ -79,9 +79,10 @@ $$\text{Taxes}=60t$$
 
 $$\text{SW}=\text{CS}+\text{PS}+\text{Taxes}$$
 
+| | | | |
 | --- | --- | --- | --- |
 | CS=18 | PS=72  | | DWL=6 |  
-| CS'=8 | PS'=32 | Taxes=32 | DWL' = 24|
+| CS'=8 | PS'=32 | Taxes=32 | DWL' = 24 |
 
 $$\text{DWL}=96-90-48t=6-48t$$
 
@@ -138,13 +139,214 @@ $$\text{MC}=\frac{10}{3}y$$
 
 Find the DWL of society and illustrate graphically.
 
+# Seminar 2, 13.09.2024
 
 ### Subproblem 3 
 
 Now let the monopolist be able to set a different price for his product for two regions, and resale between regions is impossible. Find an equilibrium and illustrate the solution graphically.
+
+---
+
+$$p_1(y_1)=10-y_1$$
+
+$$p_2(y_2)=13-0.5y_2$$
+
+$$c(y)=\frac{5}{3}y^2$$
+
+$$y=y_1+y_2$$
+
+$$\pi(y_1,y_2)=\text{TR}_1(y_1)-c(y)=(10-y_1)y_1+(13-0.5y_2)y_2-\frac{5}{3}(y_1+y_2)^2\to\max_{y_1,y_2\geq0}$$
+
+$$\text{FOC}\colon\begin{cases}\frac{\partial\pi}{\partial y_1}=10-y_1\cdot 2-\frac{5}{3}\cdot2(y_1+y_2)=0\\
+\frac{\partial\pi}{\partial y_2}=13-y_2-\frac{10}{3}(y_1+y_2)=0\end{cases}$$
+
+$$\text{SOC}\colon\begin{pmatrix}
+    -\frac{16}{3} & -\frac{10}{3}\\
+    -\frac{10}{3} & -\frac{13}{3}
+\end{pmatrix}$$
+
+$$\Delta_1<0,\quad\Delta 2\colon-\frac{16}{3}\cdot(-\frac{13}{3})-\frac{100}{9}>0$$
+
+$$\begin{cases}
+y_1^*=0 & p_1^*\in[10,+\infty)\\
+y_2^*=3 & p_2^*=11.5
+\end{cases}$$
 
 ### Subproblem 4 
  
 How will the welfare of consumers, the profit of the monopoly and the total welfare of society change with the possibility of discrimination compared with the equilibrium in the market for a monopoly product in the absence of discrimination? Comment on the result.
 
 Find MR and MC.
+
+---
+
+Everything will be the same
+
+$$\begin{cases}
+    p_2^*=11.5\\
+    y_1^*=0\\
+    y_2^*=3
+\end{cases}$$
+
+
+
+## Problem 3
+
+The monopolist produces a discrete good at a constant marginal cost of 3. Buyers' reserve prices are shown in the table:
+
+| Quantity | A, Reserve price | B, Reserve price | |
+|---------------------------|------------------------------------|-|-| 
+| 1                         | 12                                 | 5                |
+| 2                         | 5                                  | 4                |
+| 3                         | 4                                  | 2                |
+| 4                         | 2                                  | 0                |
+| 5                         | 0                                  | 0                |
+
+Assuming that there is only one consumer of type $A$ and one consumer of type $B$ in the economy, answer the following questions:
+
+### Subproblem 1
+What price will the monopolist set if he cannot discriminate? What profit will he get?
+
+| $p$ | $\pi$ |
+| --- | --- |
+| $12$ | $12 - 3\cdot1 = 9$ |
+| $5$ | $15 - 3\cdot3 = 6$ |
+| $4$ | $20 - 3\cdot5 = 5$ |
+| $<3$ | $<0$ | 
+
+which implies that $p^*=12,\quad y^*=1$.
+
+### Subproblem 2
+What price will the monopolist set if it produces the third-degree price discrimination? What profit will he get?
+
+---
+
+We charge different consumers different prices.
+
+Consider consumer A.
+
+| $p$ | $\pi$ |
+| --- | --- |
+| $12$ | $12 - 3\cdot1 = 9$ |
+| $5$ | $10 - 3\cdot2 = 4$ |
+| $4$ | $12 - 3\cdot3 = 3$ |
+| $<3$ | $<0$ | 
+
+which implies that $p_A=12,\quad y_A=1$.
+
+Consider consumer B.
+
+| $p$ | $\pi$ |
+| --- | --- |
+| $5$ | $5 - 3\cdot1 = 2$ |
+| $4$ | $8 - 3\cdot2 = 2$ |
+| $4+\varepsilon$ | $(4+\varepsilon)\cdot1-3\cdot1=1+\varepsilon$ |
+| $<3$ | $<0$ | 
+
+Total optimal profit then would be $\pi^*=11-9$
+
+### Subproblem 3
+Assuming that the monopolist can use the first-degree price discrimination, find the prices for each unit sold, the monopolist's output, and the profit.
+
+### Subproblem 4
+Compare the profit in points (1), (2), (3) and explain the result.
+
+---
+
+We may set any price for any separate unit that we sell. In this case, we iteratively set the price for each of the units first to $12$, then to $5$, and then $4$.
+
+$$\pi_A=\underbrace{(12-3)}_{\pi_{1A}}+(5-3)+(4-3)=12$$
+
+$$\pi_B=(5-3)+(4-3)=3$$
+
+$$\pi^*=15>11>9$$
+
+The first type of discrimination has a higher profit than the third one and even higher than the monopoly case.
+
+$$\pi_{1^{\text{st}}}\geq\pi_{3^{\text{rd}}}\geq\pi_m$$
+
+### Subproblem 5
+
+Show how the first-degree price discrimination result could be achieved:  
+1. through a two-stage payment (linear price plus access fee),
+2. through a bundle sale.
+
+---
+
+$$A_i+p_i\cdot q_i$$
+
+We could set any price and any access fee, but the easiest way to collect all the money that the consumer is willing to price is to set the price equal to marginal cost (MC) & set the access fee to the total of markups.
+
+$$p_i=3,A_A=12, A_B=3$$
+
+$$\pi_A=A_A+(P_A-3)\cdot \underbrace{q_A}_{q_A(p_A,A_A)}\to\max_{A_A,p_A\geq0}$$
+
+Alternatively, we could
+
+$$p_A=4,A_A=9\implies \pi=12$$
+
+The consumer get a total surplus of $9=A_A$
+
+
+## Problem 4
+
+Consider two groups of consumers. The consumers of group $H$ are represented by an aggregated consumer with a demand function for goods $y$ of the form $y^H =4-p$, and the demand of an aggregated consumer of group $L$ has the form: $y^L =3-p$. We will assume that the number of consumers in the groups is the same. Good $y$ is produced by a monopoly firm using constant returns to scale technology. The marginal cost of producing good $y$ is constant and equal to 1.
+
+### Subproblem 1
+Assuming that the monopolist is able to prevent the resale of the product, find for each group the optimal two-stage payment scheme for the product (fee for the right to purchase the product plus the linear price).
+
+---
+
+Most simple way, just set price to MC. Then we would get 
+
+$$p_h=p_l=1$$
+
+$$A_h=\frac{3\cdot 3}{2}=4.5$$
+
+$$A_l=\frac{2\cdot 2}{2}=2$$
+
+$$\pi=A_h+A_l=2+4.5=6.5$$
+
+More formally,
+
+$$CS_l=\frac{(3-p(q_l))\cdot q_l}{2}=\frac{(3-3+q_l)q_l}{2}=\frac{q_l^2}{2}=A_l$$
+
+$$CS_h=\frac{q_h^2}{2}$$
+
+$$\pi=\frac{q_l^2}{2}+\frac{q_h^2}{2}+(3-q_l)q_l+(4-q_h)q_h-3(q_l+q_h)\to\max_{q_k,q_h}$$
+
+$$p_l=q_h=1, \pi^*=6.5$$
+
+### Subproblem 2
+
+Find the optimal two-component tariff, assuming that the tariff should be the same for both regions.
+
+---
+
+$$A+p\cdot y_i$$
+
+Firstly, we try to sell our product only to $H$.
+
+$$A=4.5,\quad p=1,\quad\pi^*=4.5$$
+
+Secondly, 
+
+$$A=\frac{p_l^2}{2}$$
+
+$$p=3-q+l$$
+
+$$y_l=q_l$$
+
+$$y_h=4-\underbrace{(3-q_l)}_p=1+q_l$$
+
+$$\pi=2\cdot\frac{q_l^2}{2}+(3-q_l)(q_l+1+q_l)-(q_l+1+q_l)\max\to q_l>0$$
+
+$$\pi^*=4.25$$
+
+### Subproblem 3 
+
+How will a monopolist behave if it can offer two two-component tariffs, but each consumer chooses which tariff to subscribe to?
+
+### Subproblem 4
+
+Solve the problem under the assumption that there are twice as many consumers in group $L$ as in group $H$.
