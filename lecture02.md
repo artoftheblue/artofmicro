@@ -175,3 +175,19 @@ Then, $z=w-A-px$ and $\nu(x)+w-A-px\to_{x>0}\max\implies v'(x^*)=p$
 ---
 
 $$A=v(x)-\underbrace{px}_{C}=CS=\int\limits^{x^*}_0(v'(x)-p)dx$$
+
+### Discrimination of the second kind 
+
+According to Pigou, the second kind is characterised by two things: still the pricing schedule is non-linear but contrary to the discrimination of the 1st kind if a good is offered to the two consumers in equal amount the nthe money charged is the same. That is a result of the inability to distinguish between the agents.
+
+COnsider only 2 consumers known as "high" and "low" types. The names are explained by inequalities between their utilities.
+
+$$U_h(x,z)=\nu_h(x)+z$$
+
+$$U_1(x,z)=\nu_l(x)+z$$
+
+where $\nu_h'>\nu_l'$ for $x>0$
+
+and $\nu_h>v_l$ for $x>0$.
+
+Applying the 1st discrimination pricing for them is not possible since the high agent pretends to be the low agent and that claim enables her to keep part of her $CS$.
