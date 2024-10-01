@@ -294,3 +294,167 @@ $$\pi_1=pD_1(p)-c_1(D_1(p))\xrightarrow[p]{}\max$$
 ```{figure} ./
 Here you can find 2 figures illustrating how the equilibrium price should be found.
 ```
+
+## Choice under uncertainty
+
+### Axiomatic approach
+
+Let $A=\{a_1,a_2,\dots,a_n\}$ denote the finite set of outcomes. A simple gamble assigns a probability $p_i$ to each of the outcomes $a_i\in A$.
+
+Clearly, $p_i\geq 0$ and $\displaystyle\sum_ip_i=1$
+
+The gamble must result in some outcome of $A$. We denote $g=(p_1\circ a_1,p_2\circ a_2,\ldots,p_n\circ a_n)$
+
+The set of all simple gambles is $G_S$.
+
+But the outcomes can be gambles themselves. Then they are called compound.
+
+We assume that such compound gambles will finally result in some outcome from $A$ after some randomizations.
+
+We keep the same notations for the preferences:
+
+1. $\succeq$ no worse than
+2. $\succ$ better than
+3. $\sim$ same as
+
+Consider the set $G$ of all gambles, simple and compound.
+
+```{prf:axiom} G1. Completeness
+For any two gambles $g$ and $g'$ in $G$, either $g'\succeq g$ or $g\succeq g'$.
+```
+
+```{prf:axiom} G2. Transitivity
+
+For any three gambles $g, g', g''$ in $G$ if $g\succeq g'$ and $g'\succeq g''$, then $g\succeq g''$
+```
+
+```{prf:axiom} G3. Continuity
+
+For any $g$ in $G$ there exists some probability $\alpha\in[0, 1]$ such that $g\sim(\alpha\circ a_1, (1-\alpha)\circ a_n)$, where $a_1$ is the best outcome and $a_n$ is the worst outcome.
+```
+
+```{prf:axiom} G4. Monotonicity
+For all probabilities $\alpha, \beta\in[0, 1]$,
+
+$$(\alpha\circ a_1,(1-\alpha)\circ a_n)\succeq(\beta\circ a_1,(1-\beta)\circ a_n) \iff \alpha\geq\beta$$
+```
+
+```{prf:axiom} G5. Substitution
+If $g=(p_1\circ g_1\ldots p_k\circ g_k)$ and $h=(p_1\circ h_1\dots,p_k\circ h_k)$, given $g_i\sim h_i$ for every $i$, then $g\sim h$.
+```
+
+```{prf:axiom} G6. Reduction to simple gambles
+For any $g\in G$ there exist the probabilities $p_i, i\in\overline{1, n}$ that $g\sim(p_1\circ a_1,\ldots, p_n\circ a_n)$.
+```
+
+$$g_1=(p\circ a_1,(1-p)\circ g_2), \quad\text{simple}$$
+$$g_2=(q\circ a_1,(1-q)\circ a_2),\quad \text{compound}$$
+$$\tilde p=p+(1-p)q,\quad \tilde q=(1-p)(1-q)=1-\tilde p$$
+$$g_1\sim(\tilde p\circ a_1)$$
+
+```{prf:definition}
+The utility function $U(g)\colon G\to\mathbb{R}$ has the expected utility property if, for every $g\in G, U(g)=\displaystyle\sum^n_{i=1}p_iU(a_i)$, where $g\sim(p_1\circ a_1,\ldots, p_n\circ a_n)$.
+```
+
+```{prf:remark}
+Such simply gamble $(p_1\circ a_1,\ldots, p_n\circ a_n)$ that is indifferent with $g$ is called **induced** by $g$.
+
+$U(g)$ with the expected utility property is also called VNM utility function referring to John von Neumann.
+```
+
+```{prf:theorem} Theorem of existence of VNM function on G.
+Let preferences $\succeq$ over gambles in $G$ satisfy all $6$ axioms from $G1$ to $G6$. Then there exists a utility function $U(g)\colon G\mapsto\mathbb{R}$ representing preference $\succeq$ on $G$ that VNM function.
+```
+
+We remember from utility maximization theory that a utility function is not unique. 
+
+$$\begin{cases}
+    U(x,y)=x^\alpha y^\beta\\
+    p_xx+p_yy=I\\
+    MRS_{xy}=\frac{p_x}{p_y}
+\end{cases}$$
+
+$$U(x,y)=\alpha \ln x \beta \ln y$$
+
+What about $VNM$ functions?
+
+```{prf:theorem}
+VNM functions are unique up to positive linear transformations. In other words, if $U(g)$ represents $\succeq$ preference, then the VNM function $\nu(g)$ represents the same preference if there exists $\alpha$ and $\beta>0$ such that $\nu(g)=\alpha+\beta U(g)$.
+```
+
+### Risk aversion
+
+From now we consider only money outcomes.
+
+Then, simple gamble looks like $g=(p_1\circ w_1,\ldots,p_n\circ w_n)$ where $p_i$ is a probability of receiving $w_i\in\R$.
+
+Let us compare $U(g)$ that is given by $U(g)=\displaystyle\sum^n_{i=1}p_iU(w_i)$ with the utility value of receiving expected outcome $\mathbb{E}g=\displaystyle\sum^n_{i=1}p_iw_i$ with certainty.
+
+Let $g=(p_1\circ w_1,\ldots,p_n\circ w_n)$.
+
+If $U(\mathbb{E}g)>U(g)$, we say an individual is risk-averse for $g$.
+
+If $U(\mathbb{R}g)<U(g)$, we say an individual is risk-loving.
+
+If $U(\mathbb{E}g)<U(g)$, we say an individual is risk-neutral.
+
+If the same inequalities hold for every $g\in G$, we classify this individual using the same names, but globally (i. e. on $G$).
+
+---
+
+Elementary utility functions 
+
+$$U(W)=W^\alpha,\quad 0<\alpha< 1$$
+
+Bernoullian utility
+
+$$u(g)=Eu=p(w_1)^\alpha+(1-p)(w_2)^\alpha$$
+
+$$Ew=pw_1+(1-p)w_2$$
+
+$$0<p<1,\quad u(Ew)>Eu$$
+
+```{figure} ./image-25.png
+:height: 300
+```
+
+```{figure} ./image-26.png
+:height: 400
+```
+
+```{figure} ./insert-lecture-picture.png
+insert-lecture-picture.png
+```
+
+```{prf:definition}
+The certainty equivalent $CE$ of any simple game over wealth levels is an amount of wealth offered with certainty such that 
+$$U(g)\equiv U(CE)$$
+```
+
+```{prf:definition}
+The risk premium is an amount of wealth $P$ such that $U(g)=U(\mathbb{E} g-P)$ or $P=\mathbb{E}g-CE$.
+```
+
+```{prf:definition}
+The Arrow-Pratt measure of absolute risk-aversion is given by 
+
+$$R_a(w)=-\frac{U''(w)}{U'(w)}$$
+```
+
+```{prf:theorem}
+Two risk-averse individuals have $U(g)$ and $\nu(g)$ VNM functions, respectively.
+
+Let their Arrow-Pratt measures $R_a^1(w)>R^2_a(w),\forall w\geq0$, where
+
+$$R^1_a(w)=\frac{U''(w)}{U'(w)}$$
+
+and
+
+$$R^2_a(w)=\frac{\nu''(w)}{\nu'(w)}$$
+
+Then there exists $C^2$ function $h(x)$ with $h''(x)<0$ for $x>0$ such that $U(w)=h(\nu(w))$.
+
+Furthermore,
+
+$CE_1<CE_2$ where $CE_1$ and $CE_2$ are their respective certainty equivalents.
+```
