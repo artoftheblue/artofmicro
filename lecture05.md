@@ -446,11 +446,11 @@ Two risk-averse individuals have $U(g)$ and $\nu(g)$ VNM functions, respectively
 
 Let their Arrow-Pratt measures $R_a^1(w)>R^2_a(w),\forall w\geq0$, where
 
-$$R^1_a(w)=\frac{U''(w)}{U'(w)}$$
+$$R^1_a(w)=-\frac{U''(w)}{U'(w)}$$
 
 and
 
-$$R^2_a(w)=\frac{\nu''(w)}{\nu'(w)}$$
+$$R^2_a(w)=-\frac{\nu''(w)}{\nu'(w)}$$
 
 Then there exists $C^2$ function $h(x)$ with $h''(x)<0$ for $x>0$ such that $U(w)=h(\nu(w))$.
 

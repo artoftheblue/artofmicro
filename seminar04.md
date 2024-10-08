@@ -142,3 +142,9 @@ Graphical visualization
 $$BR_2\colon p_2=\begin{cases}
     p_1-\varepsilon, 
 \end{cases}$$
+
+---
+
+$$p_1=p_2=c_1=c_2$$
+
+2.
