@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>lecture07.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="lecture-7-15102024">Lecture 7, 15.10.2024</h1>
+<blockquote>
+<p>Start of this lecture duplicates starting from <a href="#ref6">this example</a> and further.</p>
+</blockquote>
+<h2 id="moral-hazard-in-insurance">Moral hazard in insurance</h2>
+<p>Incentive to drive carefully diminishes with the amount of coverage. Let an insurance company be a monopolist in the market. A car accident may result in varying amounts of loss.</p>
+<p>$0\leq l\leq L$ — maximum loss (still less than $W$). Effort of a driver to drive carefully takes 2 values, 0 and 1.</p>
+<p>The probability of an accident $\pi_l(e)$, $l$ — damage, $e$ — effort.</p>
+<p>$$\sum_{l=0}^L\pi_l(1)=1,\quad\sum^L_{l=0}\pi_l(0)=1$$</p>
+<p>Assumption on probabilities property $\frac{\pi_l(0)}{\pi_l(1)}$ is strictly increasing in $l$ from $0$ to $l$. It's called the monotone likelihood. More on this!</p>
+<hr>
+<p>Profit maximization</p>
+<p>$p$ — price of the contract</p>
+<p>$$p-\sum_{l=0}^L\pi_l(e)B_l\to\max_{p, B_l}$$</p>
+<p>such that</p>
+<p>$$\sum^L_{l=0}\pi_l(e)u(w-p-l+b_l)-d(e)\geq \bar u$$</p>
+<p>$$\mathcal{L}=p-\sum_{l=0}^L\pi_l(e)B_k-\lambda\left[\sum_{l=0}^L\pi_l(e)U(w-p-l-B_l)\right]$$</p>
+<p>$$\frac{\partial\mathcal{L}}{\partial p}=1-\lambda\sum^L_{l=0}\pi_l(e)u'(w-p-l+B_l)=0$$</p>
+<p>$$\frac{\partial\mathcal{L}}{\partial B_l}=\cancel{-\pi_l(e)}+\lambda\cancel{\pi_l(e)}u'(w-p-l+B_l)=0$$</p>
+<p>$$0\leq l\leq L$$</p>
+<p>$$u'(w-p-l+B_l)=\frac{1}{\lambda}=\text{const}$$</p>
+<p>$$l=0,\quad B_0=0,\quad \boxed{B_l=l}$$</p>
+<p>We say that this is full coverage.</p>
+<p>$$u(w-p)=d(e)+\bar u,\quad d(1)&gt;d(0)$$</p>
+<p>$p$ for $l=0$ is bigger than for $e=1$.</p>
+<p>$$\text{Profit}=p-\sum^L_{l=0}\pi_l(e)l$$</p>
+<pre class="hljs"><code><div>$$\sum^L_{l=0}\pi_l(0)l&gt;\sum^L_{l=0}\pi_l(1)l$$
+</div></code></pre>
+<hr>
+<p>Now we are in the situation of assymetric information.</p>
+<p>$$\begin{align*}&amp;\sum_{l=0}^L\pi_l(e)u(w-p-l+B_l)-d(e)\\geq&amp;\sum^L_{l=0}\pi_l(e')u(w-p-l+B_l)-d(e')\end{align*}$$</p>
+<p>$$e=0, \quad e'=1,\quad u(w-p)-d(0)\geq u(w-p)-d(1)\implies d(0)&gt;d(1)$$</p>
+<p>Now check when there is interest in hazardous driving:</p>
+<p>$$e=1, \quad e'=0$$</p>
+<p>$$\mathcal{L}=p-\sum^L_{l=0}\pi_l(1)B_l+\lambda\left[\sum^L_{l=0}\pi_l(1)u(w-p-l+b_l)-d(1)-\bar u\right]\+,\mu\left[\sum^L_{l=0}(\pi_l(1)-\pi_l(0))u(w-p-l+B_l)+d(0)-d(1)\right]$$</p>
+<p>$$-\mu\left[\sum^L_{l=0}(\pi_l(1)-\pi_l(0))u'(w-p-l+B_l)\right]=0$$</p>
+<p>$$\frac{\partial\mathcal{L}}{\partial B_l}=-\pi_l(1)+\lambda\pi_l(1)u'(w-p-l+B_l)+\\mu(\pi_l(1)-\pi_l(0))u'(w-p-l+B_l)=0$$</p>
+<p>We know that $\lambda\geq 0,\mu\geq 0$</p>
+<p>$\frac{\pi_l(0)}{\pi_l(1)}$ with rise in l, monotony likelihood function.</p>
+<p>$$\lambda u'(w-p-l+B_l)+\mu\left(1-\frac{\pi_l(0)}{\pi_l(1)}\right)u'(w-p-l+B_l)$$</p>
+<p>$$\boxed{\lambda+\mu\left(1-\frac{\pi_l(0)}{\pi_l(1)}=\frac{1}{u'(w-p-l+B_l)}\right)}$$</p>
+<p>If $\lambda\geq0,\mu\geq0\implies l=B_l\implies\lambda,\mu&gt;0$</p>
+<hr>
+<pre class="hljs"><code><div>Let the reservation utility be $\bar u$ (what if an agent refuses to insure?)
+
+$$p-\sum^L_{l=0}\pi_l(e)B_e\to\max_{p,l,B_l}$$
+
+$e$ is chosen by the company such that 
+
+$$\sum^L_{l=0}\pi_l(e)u(w-p-l+B_l)-d(e)\geq \bar u$$
+
+than reckless driving $\implies$ disutility $d(e)$, $d(1)&gt;d(0)$.
+
+Effort not seen by the company. Damage is seen. Let $B_l\geq 0$ be the coverage in case of the $l$ damage. Clearly, $B_l\leq l$.
+</div></code></pre>
+<h2 id="problem-4">Problem 4</h2>
+<p>Innovative firm seels the patent to the two simulatenously competing firms whose costs are $TC_i=cq_i^2+FC_i, i=\overline{1,2}$. These firms pay royalty $\rho$ per unit sold and no lump sum rotalty is charged.</p>
+<h3 id="subproblem-a">Subproblem A</h3>
+<p>Let these firms face $p(Q)=1-Q$ demand, find the $\rho$ value that enables the firms to sustain monopoly price.</p>
+<hr>
+<p>$$\pi_1+\pi_2=(1-Q)Q-2c\left(\frac{Q}{2}\right)^2\to\max_{Q&gt;0}$$</p>
+<p>$$FOC: 1-2Q-cQ=0$$</p>
+<p>$$Q^m=\frac{1}{c+2},\quad p^m=1-\frac{1}{c+2}=\frac{c+1}{c+2}$$</p>
+<p>$$\pi_1=(1-q_1-q_2)q_1-\rho q_1-cq_1^2\to\max_{q_1\geq0}$$</p>
+<p>$$1-2q_1-q_2-\rho-2cq_1=0$$</p>
+<p>Symmetrical equilibrium $\implies$</p>
+<p>$$q_1^<em>=q_2^</em>=q^*=\frac{1-\rho}{3+2c}$$</p>
+<p>$$1-\rho=(3+2c)q^<em>,\quad 2q^</em>=\boxed{\frac{2-2\rho}{3+2c}=\frac{1}{c+2}}$$</p>
+<p>$$(2-2\rho)(c+2)=3+2c$$</p>
+<p>$$2c+4-2\rho(c+2)=3+2c$$</p>
+<p>$$1=2\rho(c+2)$$</p>
+<p>$$\boxed{\rho^*=\frac{1}{2(c+2)}}$$</p>
+<h3 id="subproblem-b">Subproblem B</h3>
+<p>Let's suppose that agreement was signed only by the second firm, and the patent holder has to produce itself. Given $TC(q)=cq^2$, find under what royalty value the firms will charge the price as in Subproblem A.</p>
+<hr>
+<p>$$\tilde\pi=(1-\tilde q-q)\tilde q+\rho q-c\tilde q^2\to\max_{\tilde q\geq0}$$</p>
+<ol>
+<li>
+<p>$$\frac{\partial\tilde \pi}{\partial\tilde q}=1-2\tilde q-q-2c\tilde q=0$$</p>
+<p>$$\pi=(1-\tilde q-q) q-\rho q-cq^2\to\max_{q\geq 0}$$</p>
+</li>
+<li>
+<p>$$\frac{\partial \pi}{\partial q}=1-\tilde q-2q-\rho-2cq=0$$</p>
+</li>
+</ol>
+<p>$$\begin{cases}
+(2c+2)\tilde q+q=1\
+\tilde q+(2c+2)q=1-\rho
+\end{cases}$$</p>
+<p>$$\begin{cases}
+\tilde q +(2c+2)q=1-\rho\
+\tilde q+\frac{q}{2c+2}=\frac{1}{2c+2}
+\end{cases}$$</p>
+<p>$$\left[(2c+2)-\frac{1}{2c+2}\right]q=1-\rho-\frac{1}{2c+2}$$</p>
+<p>$$(2c+3)(2c+1)q=(2c+2)(1-\rho)-1=2c+2-\rho(2c+2)-1$$</p>
+<p>$$q=\frac{(1-\rho)(2c+2)-1}{(2c+3)(2c+1)}$$</p>
+<p>$$\begin{align*}\tilde q&amp;=1-\rho-\left<a href="2c+2">\frac{(1-\rho)(2c+2)-1}{(2c+1)(2c+3)}\right</a>+\frac{(1-\rho)(2c+2)-1}{(2c+3)(2c+1)}
+\&amp;=1-\rho-\frac{[(1-\rho)(2c+2)-1]}{2c+1}=\frac{1}{c+2}
+\end{align*}$$</p>
+<p>$$(1-\rho)\left[1-\frac{2c+2}{2c+3}\right]=\frac{1}{c+1}-\frac{1}{2c+3}$$</p>
+<p>$$(1-\rho)\frac{1}{2c+3}=\frac{c+1}{(c+2)(2c+3)}$$</p>
+<p>$$2c^2+5c+2-2c-2$$</p>
+<p>$$2c^2+3c$$</p>
+<h2 id="problem-5">Problem 5</h2>
+<p>Two producers of the dental cream compete a la Bertrand. Demand is given by $q_i=1-p_i+\tfrac{1}{2}p_{-i}$, where $i=1,2$.</p>
+<p>Let $MC_i=0$ and there are no fixed costs.</p>
+<h3 id="subproblem-a">Subproblem A</h3>
+<p>Find the Bertrand equilibrium in this game.</p>
+<hr>
+<p>Firm 1: $q_1=1-p_1+\frac{1}{2}p_2$</p>
+<p>$$p_1q_1\to\max_{p_1&gt;0},\quad p_1q_1=p_1-p_1^2+\frac{1}{2}p_2p_1\to\max$$</p>
+<p>$$0=1-2p_1+\frac{1}{2}p_2=0$$</p>
+<p>Best response is</p>
+<p>$$1+\frac{1}{2}p_2=2p_1$$</p>
+<p>$$p_1=BR_1(p_2)\frac{1}{2}+\frac{1}{4}p_2$$</p>
+<p>Firm 2: $q_2=1-p_2+\frac{1}{2}p_1$</p>
+<p>$$p_2q_2=p_2-p_2^2+\frac{1}{2}p_1p_2$$</p>
+<p>$$\frac{\partial(p_2q_2)}{\partial p_2}=1-2p_2+\frac{1}{2}p_1=0$$</p>
+<p>$$p_2=BR_2(p_1)=\frac{1}{2}+\frac{1}{4}p_1$$</p>
+<p>$$p_1^<em>=p_2^</em>=\frac{2}{3}$$</p>
+<pre class="hljs"><code><div>:label: something
+Nash equilibirium
+</div></code></pre>
+<p>$$p_1q_1=p_1\left(1-p_1+\frac{1}{4}+\frac{1}{8}p_1\right)\to\max_{p_1&gt;0}$$</p>
+<p>$$p_1\left(\frac{5}{4}-\frac{7}{8}p_1\right)\to\max$$</p>
+<p>$$\frac{5}{4}-\frac{7}{4}p_1^<em>=0\implies p_1^</em>=\frac{5}{7}$$</p>
+<p>$$p_2^*=\frac{1}{2}+\frac{5}{28}=\frac{19}{28}&gt;\frac{2}{3}$$</p>
+<p>$$q_1=q_2=1-\frac{2}{3}+\frac{1}{3}=\frac{2}{3}$$</p>
+<p>$$\pi_1=\pi_2=\frac{4}{9}$$</p>
+<p>$$\tilde q_1=1-\frac{5}{7}+\frac{19}{56}=\frac{2}{7}+\frac{19}{56}=\frac{16+19}{56}=\frac{35}{56}&lt;\frac{2}{3}$$</p>
+<h3 id="subproblem-b">Subproblem B</h3>
+<p>Consider a two-stage game, when firm 1 is the leader that knows the best response of the follower. Solve this game and compare profits obtained in these games.</p>
+
+</body>
+</html>

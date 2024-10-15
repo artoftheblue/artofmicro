@@ -224,6 +224,7 @@ $$\mathbb{E} U=\sum_{s\in S}\mu_s U(w_s)$$
 
 The same definition as in the axiomatic approach.
 
+(ref6)=
 ```{prf:example}
 Let $y$ denote the converage of a loss in the amount of $L$. The insurance premium per 1 dollar is $0<\gamma<1$, and the probability of a loss is $p$. Clearly, $\gamma\geq p$ (if $\gamma=p$, we are in an actuarially fair case).
 
@@ -247,7 +248,19 @@ $$x_{NL}=x_L=w-\gamma L$$
 
 $$pu(x_2)+(1-p)u(x_{NL})\to\max_{x_L, x_{NL}\geq 0}$$
 
+---
+
+> Lecture 7 addition.
+
 $$MRS_{x_L, x_{NL}}=\frac{pu'(x_L)}{(1-p)u'(x_{NL})}=\frac{\gamma}{1-\gamma}$$
+
+$$1<\frac{u'(x_L)}{u'(x_{NL})}=\frac{\gamma(1-p)}{(1-\gamma)p}=\frac{\gamma}{p}\frac{1-p}{1-\gamma}\implies$$
+
+$$u'(x_{NL})<u'(x_L)\implies x_{NL}>x_L\implies W-\gamma_y>w-\gamma y-L+y\implies y<L$$
+
+If you were to change the risk-averse person into a risk-loving one, then $\mu=w^2$
+
+---
 
 $$x_L=x_{NL}$$
 
@@ -295,23 +308,25 @@ For simplicity, we may consider just one risky asset with $\tilde r_1$ return.
 
 $$\mathbb{E}u(\underbrace{w(r_0+\alpha_1(r_1-r_0))}_{\tilde x})\to\max_{\alpha_1\geq 0}$$
 
-$$\frac{\partial(\mathbb{E}u)}{\partial\alpha_1}=[\mathbb{E}u'(\tilde x)w(r_1-r_0)]\biggm|_{\alpha_1=0}\leq 0$$
+Suppose that $k$-th asset was not bought $\implies\alpha_k=0$
 
-$$\mathbb{E}\tilde r_1\leq r_0$$
+$$\frac{\partial(\mathbb{E}u)}{\partial\alpha_k}=[\mathbb{E}u'(\tilde x)w(\tilde r_k-r_0)]\biggm|_{\alpha_1=0}\leq 0$$
 
-no investment
+$$\frac{\partial(\mathbb{E}u)}{\partial\alpha_k}=\cancel{\EE[wu'(\tilde x)]}\cdot[\EE \tilde r_k-r_0]\leq 0$$
 
-Let $\alpha_1>0$, then
+$$\boxed{\mathbb{E}\tilde r_k\leq r_0}$$
 
-$$E(u'(\tilde x)(\tilde r_1-r_0))=0$$
+Let $\alpha_k>0$, then
 
-$$E(u'(\tilde x)\tilde r_1)-(Eu'(\tilde x))r_0=0$$
+$$E(u'(\tilde x)(\tilde r_k-r_0))=0$$
+
+$$E(u'(\tilde x)\tilde r_k)-(Eu'(\tilde x))r_0=0$$
 
 $$cov(\xi,\eta)=\mathbb{E}[(\xi-\mathbb{E}\xi)(\eta-\mathbb{E})]=\mathbb{E}(\xi\eta)-\mathbb{E}\xi\cdot\mathbb{E}\eta<0$$
 
-$$\mathbb{E}u'(\tilde x)\mathbb{E}\tilde r_1>\mathbb{E}(u'(\tilde x)\tilde r_1)=r_0\mathbb{E}u'(\tilde x)$$
+$$\mathbb{E}u'(\tilde x)\mathbb{E}\tilde r_k>\mathbb{E}(u'(\tilde x)\tilde r_k)=r_0\mathbb{E}u'(\tilde x)$$
 
-$$\mathbb{E}\tilde r_1>r_0$$
+$$\mathbb{E}\tilde r_k>r_0$$
 
 ---
 
@@ -326,27 +341,3 @@ Let investor characterized by the elementary utility function $U(w)$, with $U'>0
 
 Then, any risky asset $k\in K$, whose expected return $\mathbb{R}\tilde r_k$ is greater than $r_0$, will be bought. 
 ```
-
-## Moral hazard in insurance
-
-Incentive to drive carefully diminishes with the amount of coverage. Let an insurance company be a monopolist in the market. A car accident may result in varying amounts of loss.
-
-$0\leq l\leq L$ — maximum loss (still less than $W$). Effort of a driver to drive carefully takes 2 values, 0 and 1.
-
-The probability of an accident $\pi_l(e)$, $l$ — damage, $e$ — effort.
-
-$$\sum_{l=0}^L\pi_l(1)=1,\quad\sum^L_{l=0}\pi_l(0)=1$$
-
-Assumption on probabilities property $\frac{\pi_l(0)}{\pi_l(1)}$ is strictly increasing in $l$ from $0$ to $l$. It's called the monotone likelihood. More on this!
-
-Let the reservation utility be $\bar u$ (what if an agent refuses to insure?)
-
-$$p-\sum^L_{l=0}\pi_l(e)B_e\to\max_{p,l,B_l}$$
-
-$e$ is chosen by the company such that 
-
-$$\sum^L_{l=0}\pi_l(e)u(w-p-l+B_l)-d(e)\geq \bar u$$
-
-than reckless driving $\implies$ disutility $d(e)$, $d(1)>d(0)$.
-
-Effort not seen by the company. Damage is seen. Let $B_l\geq 0$ be the coverage in case of the $l$ damage. Clearly, $B_l\leq l$.
